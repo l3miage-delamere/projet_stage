@@ -1,0 +1,35 @@
+body{
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+#mise-en-garde{
+    text-align: center;
+}
+
+#e-mail{
+    color: red;
+}
+
+div{
+    margin-left: 10px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+input{
+    margin-bottom: 15px;
+    margin-right: 17px;
+}
+
+select{
+    margin-bottom: 15px;
+}
+
+#index{
+    text-align: center;
+}
