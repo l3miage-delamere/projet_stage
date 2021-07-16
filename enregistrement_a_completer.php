@@ -3,7 +3,6 @@
 </head>
 <h1> L'enregistrement de vos données a bien été effectué </h1>
 <?php
-        require('fpdf.php');
         //connection à la base de données
         $hs = "localhost";
         $us = "root";
@@ -17,6 +16,7 @@
 
         //récupération du numéro de stage qui vient d'être créé
         $nO_stage = $_POST["nO_stage"];
+        echo "<br><strong>Votre numéro de dossier est le : ".$nO_stage."! <br>";
 
 
         //création de l'étudiant

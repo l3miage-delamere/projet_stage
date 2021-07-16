@@ -147,7 +147,7 @@
             $nO_rue_service_rh = $resultat_select_service_rh["nO_rue"];
             $rue_service_rh = $resultat_select_service_rh["rue"];
 
-            if($nO_rue_service_rh!='' && $rue_service_rh=''){
+            if($nO_rue_service_rh!='' && $rue_service_rh!=''){
                 //selection de l'adresse du service RH
                 $select_adresse_service_rh = "select * from adresse where nO_rue=".$nO_rue_service_rh." and rue='".$rue_service_rh."';";
                 $res_select_adresse_service_rh = $mysqlconn->query($select_adresse_service_rh);

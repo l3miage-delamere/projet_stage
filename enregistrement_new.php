@@ -14,12 +14,6 @@
             die("my sql is not connected");
         }
 
-        //récupération du numéro de stage qui vient d'être créé
-        $get_next_AUTO_INCREMENT = "SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'projet_stage' AND   TABLE_NAME   = 'stage';";
-        $result_AUTO_INCREMENT = mysqli_query($mysqlconn,$get_next_AUTO_INCREMENT);
-        $res = mysqli_fetch_assoc($result_AUTO_INCREMENT);
-        $nO_stage = $res["AUTO_INCREMENT"]-1;
-
 
         //création de l'étudiant
         if($_POST["N_etudiant"]!=''){
@@ -29,6 +23,13 @@
             //création du stage
             $create_stage = "insert into stage (etudiant) values ('".$_POST["N_etudiant"]."');";
             $res = $mysqlconn->query($create_stage);
+
+            //récupération du numéro de stage qui vient d'être créé
+            $get_next_AUTO_INCREMENT = "SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'projet_stage' AND   TABLE_NAME   = 'stage';";
+            $result_AUTO_INCREMENT = mysqli_query($mysqlconn,$get_next_AUTO_INCREMENT);
+            $res = mysqli_fetch_assoc($result_AUTO_INCREMENT);
+            $nO_stage = $res["AUTO_INCREMENT"]-1;
+            echo "<br><strong>Votre numéro de dossier est le : ".$nO_stage."! <br>";
 
             //insertion nom
             if($_POST["nom"]!=''){
